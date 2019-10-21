@@ -3,7 +3,11 @@ const app = express()
 const port = process.env.PORT || 3000
 const met = require('./met.js')
 
-
+app.get('/',function(req,res){
+    res.send({
+        Bienvenido: 'EXAMEN SEGUNDO PARCIAL'
+    })
+})
 
 app.get('/students/:id',function(req,res){
     if(!req.params.id){
@@ -19,9 +23,9 @@ app.get('/students/:id',function(req,res){
     })
 })
 
-app.get('/',function(req,res){
+app.get('/met',function(req,res){
     if(!req.query.search){
-        res.send({
+        return res.send({
             error: 'Debes enviar el nombre de un objeto para su búsqueda'
         })
     }
