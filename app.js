@@ -22,7 +22,7 @@ app.get('/students/:id',function(req,res){
 app.get('/',function(req,res){
     if(!req.query.search){
         res.send({
-            error: 'Debes enviar un objeto'
+            error: 'Debes enviar el nombre de un objeto para su búsqueda'
         })
     }
 
